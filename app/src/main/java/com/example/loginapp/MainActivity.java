@@ -1,24 +1,62 @@
 package com.example.loginapp;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class MainActivity extends AppCompatActivity {
+    private int count = 0;
+    private TextView countText;
+
+    private static final String TAG = "Tecson";
+    @Override protected void onStart() {
+        super.onStart(); Log.d(TAG, "onStart");
+    }
+
+    @Override protected void onResume() {
+        super.onResume(); Log.d(TAG, "onResume");
+    }
+
+    @Override protected void onPause() {
+        super.onPause(); Log.d(TAG, "onPause");
+    }
+
+    @Override protected void onStop() {
+        super.onStop(); Log.d(TAG, "onStop");
+    }
+
+    @Override protected void onRestart() {
+        super.onRestart(); Log.d(TAG, "onStop");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("count", count);
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        WindowCompat.enableEdgeToEdge(getWindow());
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        countText = findViewById(R.id.count_text);
+        Button countButton = findViewById(R.id.count_button);
+
+        if (savedInstanceState != null) {
+            count = savedInstanceState.getInt("count");
+        }
+        countText.setText("Dwin's Count: " + count);
+
+        countButton.setOnClickListener( v -> {
+            count++;
+            countText.setText("Dwin's Count: " + count);
         });
     }
 }
