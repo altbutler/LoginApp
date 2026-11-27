@@ -2,21 +2,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp">
 
+<!--    <TextView-->
+<!--        android:id="@+id/app_name"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="24sp"-->
+<!--        android:text="LoginApp"-->
+
     <TextView
-        android:id="@+id/count_text"
+        android:id="@+id/event_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dwin's Count: 0"
-        android:textSize="32sp" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        android:text="Tecson Login" />
+
+    <TextView
+        android:id="@+id/login_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-25dp"
+        android:text="Email address" />
+
+    <EditText
+        android:id="@+id/login_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="name@example.com"
+        android:inputType="textEmailAddress"/>
+
+    <TextView
+        android:id="@+id/status_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(status message appears here)"
+        android:layout_gravity="center"/>
+
 
     <Button
-        android:id="@+id/count_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/register_button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Tap Me" />
+        android:layout_marginTop="12dp"
+        android:text="REGISTER"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

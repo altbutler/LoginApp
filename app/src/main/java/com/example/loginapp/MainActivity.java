@@ -46,17 +46,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        countText = findViewById(R.id.count_text);
-        Button countButton = findViewById(R.id.count_button);
 
-        if (savedInstanceState != null) {
-            count = savedInstanceState.getInt("count");
-        }
-        countText.setText("Dwin's Count: " + count);
-
-        countButton.setOnClickListener( v -> {
-            count++;
-            countText.setText("Dwin's Count: " + count);
-        });
     }
 }
